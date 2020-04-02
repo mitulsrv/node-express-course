@@ -15,6 +15,15 @@ app.get('/users', (req, res) => {
     })
 })
 
+app.get('/users/:id', (req, res)=>{
+    console.log(req.params.id);
+    res.json({
+        success:true,
+        message: "successfully got users, Nice!",
+        users: req.params.id
+    })
+})
+
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000")
